@@ -5,12 +5,12 @@ using Umbraco.Web.PropertyEditors;
 
 namespace Our.Umbraco.NullableTypes.PropertyEditors
 {
-    [PropertyEditor(PropertyEditorAlias, "Nullable Boolean", "~/App_Plugins/NullableBoolean/NullableBoolean.html", ValueType = "JSON")]
-    [PropertyEditorAsset(ClientDependencyType.Css, "~/App_Plugins/NullableBoolean/NullableBoolean.css")]
-    [PropertyEditorAsset(ClientDependencyType.Javascript, "~/App_Plugins/NullableBoolean/NullableBoolean.js")]
+    [PropertyEditor(PropertyEditorAlias, "Nullable Boolean", "~/App_Plugins/NullableTypes/NullableBoolean.html", ValueType = "JSON")]
+    [PropertyEditorAsset(ClientDependencyType.Css, "~/App_Plugins/NullableTypes/NullableBoolean.css")]
+    [PropertyEditorAsset(ClientDependencyType.Javascript, "~/App_Plugins/NullableTypes/NullableBoolean.js")]
     public class NullableBooleanPropertyEditor : PropertyEditor
     {
-        public const string PropertyEditorAlias = "Our.Umbraco.NullableBoolean";
+        public const string PropertyEditorAlias = "Our.Umbraco.NullableTypes.NullableBoolean";
 
         public NullableBooleanPropertyEditor() : base()
         {

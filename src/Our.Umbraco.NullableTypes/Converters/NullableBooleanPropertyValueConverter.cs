@@ -27,17 +27,23 @@ namespace Our.Umbraco.NullableTypes.Converters
         /// <returns>A <see cref="CheckboxTable"/> object</returns>
         public override object ConvertSourceToObject(PublishedPropertyType publishedPropertyType, object source, bool preview)
         {
-            switch (source.ToString())
+            bool? nullableBoolean = null;
+
+            if (source != null)
             {
-                case "0":
-                    return false;
+                switch (source.ToString())
+                {
+                    case "0":
+                        nullableBoolean = false;
+                        break;
 
-                case "1":
-                    return true;
-
-                default:
-                    return null;
+                    case "1":
+                        nullableBoolean = true;
+                        break;
+                }
             }
+
+            return nullableBoolean;
         }
     }
 }
