@@ -40,3 +40,7 @@ using Our.Umbraco.EmbeddedResource;
 [assembly: EmbeddedResourceProtected("Our.Umbraco.NullableTypes.Resources.NullableBoolean.css", "~/App_Plugins/NullableTypes/NullableBoolean.css")]
 [assembly: EmbeddedResourceProtected("Our.Umbraco.NullableTypes.Resources.NullableBoolean.html", "~/App_Plugins/NullableTypes/NullableBoolean.html")]
 [assembly: EmbeddedResourceProtected("Our.Umbraco.NullableTypes.Resources.NullableBoolean.js", "~/App_Plugins/NullableTypes/NullableBoolean.js")]
+
+[assembly: EmbeddedResourceProtected("Our.Umbraco.NullableTypes.Resources.NullableString.css", "~/App_Plugins/NullableTypes/NullableString.css")]
+[assembly: EmbeddedResourceProtected("Our.Umbraco.NullableTypes.Resources.NullableString.html", "~/App_Plugins/NullableTypes/NullableString.html")]
+[assembly: EmbeddedResourceProtected("Our.Umbraco.NullableTypes.Resources.NullableString.js", "~/App_Plugins/NullableTypes/NullableString.js")]
