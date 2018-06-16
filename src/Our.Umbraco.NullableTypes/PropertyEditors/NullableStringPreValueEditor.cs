@@ -10,5 +10,12 @@ namespace Our.Umbraco.NullableTypes.PropertyEditors
             "boolean", 
             Description = "An active checkbox makes for an active textbox (whitespace instead of null)")]
         public bool DefaultCheckboxState { get; set; }
+
+        [PreValueField(
+            "showTextWhenNull",
+            "Show Text When Null",
+            "boolean",
+            Description = "If checked, any text in the textbox will remain visible whilst it's deactivated (in null node)")]
+        public bool ShowTextWhenNull { get; set; }
     }
 }

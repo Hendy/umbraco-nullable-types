@@ -1,11 +1,12 @@
 ﻿﻿<div ng-controller="NullableStringController" class="nullable-string">
 
-    <input type="checkbox" 
+    <input type="checkbox"
+           style="width:20px;height:20px;"
            ng-model="model.value.checkbox"
            ng-change="checkboxChange()"/>
 
     <input type="text" 
-           ng-model="model.value.text"
+           ng-model="model.text"
            ng-disabled="!(model.value.checkbox)" />
 
 </div>
