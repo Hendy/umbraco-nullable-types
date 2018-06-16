@@ -190,5 +190,14 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\NullableString.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\NullableString.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\NullableString.js" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
