@@ -42,5 +42,10 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\NullableBoolean.css" />
+    <EmbeddedResource Include="Resources\NullableBoolean.html" />
+    <EmbeddedResource Include="Resources\NullableBoolean.js" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

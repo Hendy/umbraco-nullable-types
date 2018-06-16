@@ -1,0 +1,28 @@
+﻿﻿<div ng-controller="NullableBooleanController" class="nullable-boolean">
+
+    <label>
+        <input type="radio" 
+               value="" 
+               ng-model="model.value" />
+        <span ng-bind-html-unsafe="model.config.nullText"></span>
+    </label>
+
+    <span class="spacer" />
+
+    <label>
+        <input type="radio" 
+               value="0" 
+               ng-model="model.value" />
+        <span ng-bind-html-unsafe="model.config.falseText"></span>
+    </label>
+
+    <span class="spacer" />
+
+    <label>
+        <input type="radio" 
+               value="1" 
+               ng-model="model.value" />
+        <span ng-bind-html-unsafe="model.config.trueText"></span>
+    </label>
+
+</div>
