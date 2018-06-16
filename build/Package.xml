@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<umbPackage>
+  
+  <info>    
+    <package>
+      <name>Nullable Types</name>
+      <version>0.1.0</version>
+      <license url="https://github.com/Hendy/umbraco-nullable-types/blob/master/LICENSE">license</license>
+      <url>https://github.com/Hendy/umbraco-nullable-types</url>
+      <requirements>
+        <major>7</major>
+        <minor>2</minor>
+        <patch>3</patch>
+      </requirements>
+    </package>    
+    <author>
+      <name>Hendy Racher</name>
+      <website>https://github.com/Hendy/umbraco-nullable-types/graphs/contributors</website>
+    </author>    
+    <readme>
+      <![CDATA[Property editor for a nullable types.]]>
+    </readme>    
+  </info>
+
+  <DocumentTypes/>
+  <Templates/>
+  <Stylesheets/>
+  <Macros/>
+  <DictionaryItems/>
+  <Languages/>
+  <DataTypes/>
+  <Actions/>
+  <control/>
+
+  <files>
+    <file>
+      <guid>3b8fa7fb-5a8d-4b72-8b74-23de6af3be7a.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Our.Umbraco.NullableTypes.dll</orgName>
+    </file>
+    <file>
+      <guid>10075be9-8a98-422f-9e81-e96422dbbc9d.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Our.Umbraco.EmbeddedResource.dll</orgName>
+    </file>
+  </files>
+
+</umbPackage>
