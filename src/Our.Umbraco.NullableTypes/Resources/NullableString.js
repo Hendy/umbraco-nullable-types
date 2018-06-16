@@ -10,24 +10,26 @@
 
     function NullableStringController($scope) {
 
-        var hidden;
-
         $scope.model.value = $scope.model.value || {
-            checkbox: false,
+            checkbox: $scope.model.config.defaultCheckboxState == '1',
             text: ''
         };
 
-        hidden = $scope.model.value.text;
+        //textNulled = $scope.model.value.text;
 
-        $scope.checkboxChange = function () {
+        //if ($scope.model.config.hideText) {
 
-            if ($scope.model.value.checkbox) {
-                $scope.model.value.text = hidden;
-            } else {
-                hidden = $scope.model.value.text;
-                $scope.model.value.text = '';
-            }
-        };
+        //    $scope.checkboxChange = function () {
+        //        if ($scope.model.value.checkbox) {
+        //            $scope.model.value.text = textNulled;
+        //        } else {
+        //            textNulled = $scope.model.value.text;
+        //            $scope.model.value.text = '';
+        //        }
+        //    };
+
+        //    // on save, swap back any nulled text
+        //}
 
     }
 
