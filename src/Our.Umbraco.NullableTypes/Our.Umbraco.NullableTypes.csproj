@@ -177,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\NullableBooleanPropertyValueConverter.cs" />
+    <Compile Include="Converters\NullableStringPropertyValueConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyEditors\NullableStringPreValueEditor.cs" />
     <Compile Include="PropertyEditors\NullableBooleanPreValueEditor.cs" />
