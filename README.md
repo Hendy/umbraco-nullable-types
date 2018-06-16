@@ -1,10 +1,12 @@
 # Umbraco Nullable Types
-Data-types for bool? string? and int?
+Property editors (and value converters) to enable a null value to be selected in preference to an empty value.
 
-## Data Types
-* Nullable Boolean
+## _Nullable Boolean_
 A tri-state data-type where the default value is null.
 The raw values stored are: "", "0" or "1" so compatable with the built-in true/false data-type.
+The property-value-converter returns a nullable bool.
 
-* Nullable String
-Extends the built in textstring data-type with a checkbox, enabling a null value (as opposed to empty string) to be specified.
+## _Nullable String_
+'But strings are always nullable !' however with a textbox alone there's no way to distinguish between whitespace and null, 
+so this data-type adds a checkbox to toggle between the textbox value and null.
+The raw value stored is json, but the property-value-converter will return a string.
