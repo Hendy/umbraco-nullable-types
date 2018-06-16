@@ -177,6 +177,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyEditors\NullableBooleanPreValueEditor.cs" />
+    <Compile Include="PropertyEditors\NullableBooleanPropertyEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\NullableBoolean.css" />
