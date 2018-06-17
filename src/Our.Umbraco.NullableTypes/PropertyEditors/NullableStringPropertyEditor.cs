@@ -15,7 +15,10 @@ namespace Our.Umbraco.NullableTypes.PropertyEditors
         public NullableStringPropertyEditor() : base()
         {
             this.DefaultPreValues = new Dictionary<string, object>
-            {                
+            {
+                { "defaultCheckboxState", "1" },
+                { "showTextWhenNull", "0" },
+                { "textboxStyle", "width:90%;" }
             };
         }
 

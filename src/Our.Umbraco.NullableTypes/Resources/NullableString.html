@@ -5,7 +5,8 @@
            ng-model="model.value.checkbox"
            ng-change="checkboxChange()"/>
 
-    <input type="text" 
+    <input type="text"
+           style="{{model.config.textboxStyle}}" 
            ng-model="model.text"
            ng-disabled="!(model.value.checkbox)" />
 

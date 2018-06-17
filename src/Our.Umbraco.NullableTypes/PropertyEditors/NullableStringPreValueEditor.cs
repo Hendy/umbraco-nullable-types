@@ -17,5 +17,12 @@ namespace Our.Umbraco.NullableTypes.PropertyEditors
             "boolean",
             Description = "If checked, any text in the textbox will remain visible whilst it's deactivated (in null node)")]
         public bool ShowTextWhenNull { get; set; }
+
+        [PreValueField(
+            "textboxStyle", 
+            "Textbox Style", 
+            "textstring", 
+            Description = "Optional semicolon delimeted, style attribute values")]
+        public string TextboxStyle { get; set; }
     }
 }
