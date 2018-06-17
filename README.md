@@ -1,5 +1,5 @@
 # Umbraco Nullable Types
-Property editors (and value converters) to enable a null value to be selected in preference to a default value.
+Property editors which enable a null value to be selected in preference to a default value.
 
 ## _Nullable String_
 'But strings are always nullable !' however with a textbox alone there's no way to distinguish between whitespace and null, 
