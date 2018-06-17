@@ -10,35 +10,50 @@
 
     function NullableStringController($scope) {
 
-        // restore or create default saved value
-        $scope.model.value = $scope.model.value || {
-            checkbox: $scope.model.config.defaultCheckboxState == '1',
-            text: ''
-        };
+        function init() {
 
-        // working vars
-        $scope.model.text = $scope.model.value.text;
-        var textNulled = $scope.model.value.text;
+            // restore or create default saved value
+            $scope.model.value = $scope.model.value || {
+                checkbox: $scope.model.config.defaultCheckboxState == '1',
+                text: ''
+            };
 
-        $scope.checkboxChange = function () {
-            if (!($scope.model.config.showTextWhenNull == '1')) { // if text should be hidden
+            // set working copy for the textbox
+            if (!swapText() || textActive()) {
+                $scope.model.text = $scope.model.value.text;
+            }
 
-                if ($scope.model.value.checkbox) {
-                    $scope.model.text = textNulled;
+            $scope.checkboxChange = function () { checkboxChange(); };
+
+            $scope.$on("formSubmitting", formSubit);
+        }
+
+        // if the text should be hidden when in 'null mode'
+        function swapText() { return !($scope.model.config.showTextWhenNull == '1'); }
+
+        function textActive() { return $scope.model.value.checkbox; }
+
+        function checkboxChange() {
+            if (swapText()) {
+                if (textActive()) {
+                    // restore textbox value from saved
+                    $scope.model.text = $scope.model.value.text;
                 } else {
-                    textNulled = $scope.model.text;
+                    // set saved, and clear textbox
+                    $scope.model.value.text = $scope.model.text;
                     $scope.model.text = '';
                 }
             }
-        };
-        
-        // on save set value from working var
-        $scope.$on("formSubmitting", function () {
+        }
 
+        function formSubit() {
 
+            if (!swapText() || textActive()) {
+                $scope.model.value.text = $scope.model.text;
+            }
+        }
 
-            $scope.model.value.text = $scope.model.text;
-        });
+        init();
     }
 
 })();
