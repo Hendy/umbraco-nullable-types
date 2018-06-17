@@ -19,7 +19,7 @@
             };
 
             // set working copy for the textbox
-            if (!swapText() || textActive()) {
+            if (!hideTextWhenNull() || textActive()) {
                 $scope.model.text = $scope.model.value.text;
             }
 
@@ -28,13 +28,12 @@
             $scope.$on("formSubmitting", formSubit);
         }
 
-        // if the text should be hidden when in 'null mode'
-        function swapText() { return !($scope.model.config.showTextWhenNull == '1'); }
+        function hideTextWhenNull() { return ($scope.model.config.hideTextWhenNull == '1'); }
 
         function textActive() { return $scope.model.value.checkbox; }
 
         function checkboxChange() {
-            if (swapText()) {
+            if (hideTextWhenNull()) {
                 if (textActive()) {
                     // restore textbox value from saved
                     $scope.model.text = $scope.model.value.text;
@@ -48,7 +47,7 @@
 
         function formSubit() {
 
-            if (!swapText() || textActive()) {
+            if (!hideTextWhenNull() || textActive()) {
                 $scope.model.value.text = $scope.model.text;
             }
         }

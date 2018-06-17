@@ -12,11 +12,11 @@ namespace Our.Umbraco.NullableTypes.PropertyEditors
         public bool DefaultCheckboxState { get; set; }
 
         [PreValueField(
-            "showTextWhenNull",
-            "Show Text When Null",
+            "hideTextWhenNull",
+            "Hide Text When Null",
             "boolean",
-            Description = "If checked, any text in the textbox will remain visible whilst it's deactivated (in null node)")]
-        public bool ShowTextWhenNull { get; set; }
+            Description = "If checked, any text in the textbox will be hidden whilst it's deactivated (in null node)")]
+        public bool HideTextWhenNull { get; set; }
 
         [PreValueField(
             "textboxStyle", 
