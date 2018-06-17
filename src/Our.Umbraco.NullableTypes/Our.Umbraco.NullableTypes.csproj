@@ -202,5 +202,14 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\NullableString.js" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\NullableInteger.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\NullableInteger.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\NullableInteger.js" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
