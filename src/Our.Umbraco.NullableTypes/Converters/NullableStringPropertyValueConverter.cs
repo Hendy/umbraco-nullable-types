@@ -32,16 +32,28 @@ namespace Our.Umbraco.NullableTypes.Converters
         {
             string nullableString = null;
 
-            if (source != null)
+            if (source != null && source is string)
             {
-                var value = JObject.Parse((string)source);
+                var sourceString = source.ToString();
 
-                var checkbox = (bool)value["checkbox"];
-                var text = (string)value["text"];
-
-                if (checkbox)
+                try
                 {
-                    nullableString = text;
+                    var value = JObject.Parse(sourceString);
+
+                    if (value.Type == JTokenType.Object)
+                    {
+                        var checkbox = (bool)value["checkbox"];
+                        var text = (string)value["text"];
+
+                        if (checkbox)
+                        {
+                            nullableString = text;
+                        }
+                    }
+                }
+                catch // not a json object, so expecting raw text value
+                {
+                    nullableString = sourceString;
                 }
             }
 

@@ -10,49 +10,43 @@
 
     function NullableStringController($scope) {
 
-        function init() {
+        var config = {
+            defaultCheckboxState: $scope.model.config.defaultCheckboxState == '1',
+            hideTextWhenNull: $scope.model.config.hideTextWhenNull == '1'
+        };
 
-            // restore or create default saved value
-            $scope.model.value = $scope.model.value || {
-                checkbox: $scope.model.config.defaultCheckboxState == '1',
-                text: ''
+        var textActive = function () { return $scope.model.value.checkbox; };
+
+        // init value
+        if (typeof $scope.model.value != 'object') { // handle non-standard save formats
+            $scope.model.value = {
+                checkbox: config.defaultCheckboxState,
+                text: $scope.model.value // expecting null or string value
             };
-
-            // set working copy for the textbox
-            if (!hideTextWhenNull() || textActive()) {
-                $scope.model.text = $scope.model.value.text;
-            }
-
-            $scope.checkboxChange = function () { checkboxChange(); };
-
-            $scope.$on("formSubmitting", formSubit);
         }
 
-        function hideTextWhenNull() { return ($scope.model.config.hideTextWhenNull == '1'); }
+        // set working copy for the textbox
+        if (!config.hideTextWhenNull || textActive()) {
+            $scope.model.text = $scope.model.value.text;
+        }
 
-        function textActive() { return $scope.model.value.checkbox; }
-
-        function checkboxChange() {
-            if (hideTextWhenNull()) {
+        $scope.checkboxChange = function () {
+            if (config.hideTextWhenNull) {
                 if (textActive()) {
-                    // restore textbox value from saved
                     $scope.model.text = $scope.model.value.text;
                 } else {
-                    // set saved, and clear textbox
                     $scope.model.value.text = $scope.model.text;
                     $scope.model.text = '';
                 }
             }
-        }
+        };
 
-        function formSubit() {
-
-            if (!hideTextWhenNull() || textActive()) {
+        $scope.$on("formSubmitting", function () {
+            if (!config.hideTextWhenNull || textActive()) {
                 $scope.model.value.text = $scope.model.text;
             }
-        }
+        });
 
-        init();
     }
 
 })();

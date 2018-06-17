@@ -9,6 +9,8 @@ The property-value-converter will return a nullable bool.
 
 ## _Nullable String_
 'But strings are always nullable !' however with a textbox alone there's no way to distinguish between whitespace and null, 
-so this data-type adds a checkbox to toggle between the textbox value and null.
+so this data-type adds a checkbox to toggle between the textbox value and a null.
 
-The raw value stored is as json (which enables a previously nulled value to be restored) but the property-value-converter will return a string.
+The raw values are stored as json, but it will also read in string values as stored by the built-in textstring data-type 
+(so can migrate away from textstring, but not return if item has been saved).
+The property-value-converter will return a string.
