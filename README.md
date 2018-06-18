@@ -1,6 +1,7 @@
 # Umbraco Nullable Types
 Property editors which enable a null value to be selected in preference to a default value.
 
+[The NuGet package](https://www.nuget.org/packages/Our.Umbraco.NullableTypes) installs a single assembly _Our.Umbraco.NullableTypes.dll_ which has a dependency on [Umbraco Embedded Resource](https://github.com/Hendy/umbraco-embedded-resource).
 
 ## _Nullable Boolean_
 A tri-state data-type where the default value is null.
