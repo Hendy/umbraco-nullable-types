@@ -15,7 +15,7 @@
             hideTextWhenNull: $scope.model.config.hideTextWhenNull == '1'
         };
 
-        var textActive = function () { return $scope.model.value.checkbox; };
+        var notNull = function () { return $scope.model.value.checkbox; };
 
         // init value
         if (typeof $scope.model.value != 'object') { // handle non-standard save formats
@@ -26,13 +26,13 @@
         }
 
         // set working copy for the textbox
-        if (!config.hideTextWhenNull || textActive()) {
+        if (!config.hideTextWhenNull || notNull()) {
             $scope.model.text = $scope.model.value.text;
         }
 
         $scope.checkboxChange = function () {
             if (config.hideTextWhenNull) {
-                if (textActive()) {
+                if (notNull()) {
                     $scope.model.text = $scope.model.value.text;
                 } else {
                     $scope.model.value.text = $scope.model.text;
@@ -42,7 +42,7 @@
         };
 
         $scope.$on("formSubmitting", function () {
-            if (!config.hideTextWhenNull || textActive()) {
+            if (!config.hideTextWhenNull || notNull()) {
                 $scope.model.value.text = $scope.model.text;
             }
         });
