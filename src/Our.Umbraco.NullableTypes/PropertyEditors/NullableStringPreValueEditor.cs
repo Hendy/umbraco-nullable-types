@@ -7,22 +7,22 @@ namespace Our.Umbraco.NullableTypes.PropertyEditors
         [PreValueField(
             "defaultCheckboxState", 
             "Default Checkbox State", 
-            "boolean", 
-            Description = "An active checkbox makes for an active textbox (whitespace instead of null mode)")]
+            "boolean",
+            Description = "When checked, the textbox is initially active (non null mode)")]
         public bool DefaultCheckboxState { get; set; }
 
         [PreValueField(
             "hideTextWhenNull",
             "Hide Text When Null",
             "boolean",
-            Description = "If checked, any text in the textbox will be hidden whilst it's deactivated (in null node)")]
+            Description = "When checked, any text in the textbox will be hidden in null mode")]
         public bool HideTextWhenNull { get; set; }
 
         [PreValueField(
             "textboxStyle", 
             "Textbox Style", 
             "textstring", 
-            Description = "Optional semicolon delimeted, style attribute values")]
+            Description = "Optional style attributes for the textbox")]
         public string TextboxStyle { get; set; }
     }
 }
