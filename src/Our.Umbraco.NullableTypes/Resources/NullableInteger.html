@@ -5,13 +5,13 @@
            ng-change="checkboxChange()"/>
 
     <input type="number" 
-           pattern="[0-9]*"
            min="{{model.config.minimumValue}}"
            max="{{model.config.maximumValue}}"
            step="{{model.config.stepSize}}"
-           class=""
+           pattern="/^-?[0-9][^\.]*$/"
+           class="umb-number"
            ng-model="model.number" 
            ng-disabled="!(model.value.checkbox)"
-           fix-number />
+           ng-required="model.value.checkbox"/>
 
 </div>
