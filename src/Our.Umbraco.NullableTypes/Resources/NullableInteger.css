@@ -1,2 +1,8 @@
-﻿.nullable-integer  {
+﻿.nullable-integer input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+}
+
+.nullable-integer input[type='number']  {
+    width: 11em;
 }

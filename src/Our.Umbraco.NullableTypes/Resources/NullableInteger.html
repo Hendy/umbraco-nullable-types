@@ -1,4 +1,14 @@
 ﻿﻿<div ng-controller="NullableIntegerController" class="nullable-integer">
 
+    <input type="checkbox"
+           ng-model="model.value.checkbox"
+           ng-change="checkboxChange()"/>
+
+    <input type="number" 
+           min=""
+           max=""
+           class="umb-number"
+           ng-model="model.number" 
+           ng-disabled="!(model.value.checkbox)"/>
 
 </div>
